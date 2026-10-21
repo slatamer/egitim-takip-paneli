@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI',Tahoma,Geneva;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: #e9ecef;
+}
+
+.login-container{
+    width: 500px;
+    padding: 2px;
+}
+
+.login-card{
+    width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    background: lightsteelblue;
+}
+
+.login-card h2{
+    color: #1f4068;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+form div{
+    margin-left: 10px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label{
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f4068;
+    margin-bottom: 5px;
+    margin-left: 120px;
+}
+#sicNolabel{
+    margin-top: 50px;
+}
+#newPerNameLabel{
+    margin-top: 30px;
+}
+#changeSicNoLabel {
+    margin-top: 30px;
+}
+.input-group input{
+    width: 200px;
+    padding: 12px 14px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    outline: none;
+    transition: border-color 0.5s;
+    margin-left: 120px;
+}
+
+.btn-login {
+    width: 30%;
+    height: 60px;
+    font-weight: 700;
+    padding: 12px;
+    background: #1f4068;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+    margin-top: 50px;
+}
+.btn-login:hover {
+    background: #112233;
+}
+
+.form-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+.newAccontForm{
+    text-align: left;
+}
+
+.input-group-new {
+    width: 80%;
+    margin-bottom: 18px;
+}
+
+.input-group-new label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f4068;
+    margin-bottom: 5px;
+    margin-left: 120px;
+}
+
+.input-group-new input{
+    width: 200px;
+    padding: 12px 14px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    outline: none;
+    transition: border-color 0.5s;
+    margin-left: 120px;
+}
+#newPerNoLabel{
+    margin-top: 50px;
+}
+#newPerNo{
+    width: 200px;
+}
+#newPerPasswordLabel{
+    margin-top: 50px;
+}
+#newPerPassword, #newPerPasswordConfirm{
+    width: 210px;
+}
+
+/*-----------------------------------------------------------------------*/
+.hidden {
+    display: none !important;
+}
+
+.toggle-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+    text-align: center;
+}
+
+.toggle-text a {
+    color: #1f4068;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toggle-text a:hover {
+    text-decoration: underline;
+}
+
+.divider-dot {
+    margin: 0 6px;
+    color: #1f4068;
+    font-weight: bold;
+}
+
+/*---------------------------------------------------------------*/
+.btn-register {
+    width: 170px;
+    height: 60px;
+    font-weight: 700;
+    padding: 12px;
+    background: #1f4068;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.btn-register:hover {
+    background: #112233;
+}
+
+.error-message {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    width: 250px;
+    color: white;
+    background: #f43434;
+    margin-top: 20px;
+    margin-left: 100px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Başarı mesajı stili */
+.error-message.success {
+    background: #28a745 !important;
+    color: white !important;
+}

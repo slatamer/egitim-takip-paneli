@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ETP - Giriş</title>
+    <link rel="stylesheet" href="css/style_index.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Eğitim Takip Paneli</h2>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="sicNo" id="sicNolabel">Sicil No :</label>
+                <input type="text" id="sicNo" placeholder="Sicil No (5 haneli) giriniz..." maxlength="5" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Şifre :</label>
+                <input type="password" id="password" placeholder="Şifre giriniz..." required>
+            </div>
+
+            <button type="submit" class="btn-login">Giriş Yap</button>
+        </form>
+
+        <p class="toggle-text" id="loginToggleText">
+            <a href="#" id="showRegister">Kayıt Ol</a>
+            <span class="divider-dot">•</span>
+            <a href="#" id="showChangePassword">Şifre Değiştir</a>
+        </p>
+
+        <!-- KAYIT OL FORMU -->
+        <form id="registerForm" class="newAccontForm hidden">
+            <div class="input-group-new">
+                <label for="newPerName" id="newPerNameLabel">Adı - Soyadı :</label>
+                <input type="text" id="newPerName" placeholder="Adınızı giriniz..." required>
+            </div>
+            <div class="input-group-new">
+                <input type="text" id="newPerSurname" placeholder="Soyadınızı giriniz..." required>
+            </div>
+
+            <div class="input-group-new">
+                <label for="newPerNo" id="newPerNoLabel">Sicil No :</label>
+                <input type="text" id="newPerNo" placeholder="Sicil No (5 haneli) giriniz..." maxlength="5" required>
+            </div>
+
+            <div class="input-group-new">
+                <label for="newPerPassword" id="newPerPasswordLabel">Şifre :</label>
+                <input type="password" id="newPerPassword" placeholder="Şifre giriniz..." required>
+            </div>
+
+            <div class="input-group-new">
+                <label for="newPerPasswordConfirm">Şifre Tekrar :</label>
+                <input type="password" id="newPerPasswordConfirm" placeholder="Şifrenizi tekrar giriniz..." required>
+            </div>
+
+            <button type="submit" class="btn-register">Üye Ol</button>
+        </form>
+
+        <p class="toggle-text hidden" id="registerToggleText">
+            Zaten hesabınız var mı? <a href="#" id="showLoginFromRegister">Giriş Yap</a>
+        </p>
+
+        <!-- ŞİFRE DEĞİŞTİR FORMU -->
+        <form id="changePasswordForm" class="newAccontForm hidden">
+            <div class="input-group-new">
+                <label for="changeSicNo" id="changeSicNoLabel">Sicil No :</label>
+                <input type="text" id="changeSicNo" placeholder="Sicil No (5 haneli) giriniz..." maxlength="5" required>
+            </div>
+
+            <div class="input-group-new">
+                <label for="oldPassword">Mevcut Şifre :</label>
+                <input type="password" id="oldPassword" placeholder="Mevcut şifrenizi giriniz..." required>
+            </div>
+
+            <div class="input-group-new">
+                <label for="newPassword">Yeni Şifre :</label>
+                <input type="password" id="newPassword" placeholder="Yeni şifrenizi giriniz..." required>
+            </div>
+
+            <button type="submit" class="btn-register">Şifreyi Güncelle</button>
+        </form>
+
+        <p class="toggle-text hidden" id="changePassToggleText">
+            Giriş ekranına dönmek için <a href="#" id="showLoginFromPass">Giriş yapın</a>
+        </p>
+
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+
+</body>
+</html>

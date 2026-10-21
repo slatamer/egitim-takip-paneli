@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ETP - Kayıt Düzenle</title>
+    <link rel="stylesheet" href="css/style_edit.css">
+</head>
+<body>
+<div class="training-container">
+    <div class="top-header-right">
+        <div class="güncelTarih">
+            <div class="tarih-wrapper">
+                <span id="liveClock">Yükleniyor...</span>
+            </div>
+        </div>
+        <div class="header-buttons">
+            <button type="button" id="btnBack">Vazgeç ve Geri Dön</button>
+        </div>
+    </div>
+
+    <div class="training-card">
+        <div class="form-row">
+
+            <div class="eğitimiAlanBilgileri">
+                <h3 class="section-title">Eğitimi Alan Personel</h3>
+                <form id="personelForm">
+                    <div class="input-group-row">
+                        <label for="personelSicilNo">Sicil No:</label>
+                        <input type="text" id="personelSicilNo" placeholder="Sicil No (5 haneli) giriniz..." maxlength="5" required>
+                    </div>
+                    <div class="input-group-row">
+                        <label for="personelAd">Adı:</label>
+                        <input type="text" id="personelAd" placeholder="Personel adı..." required>
+                    </div>
+                    <div class="input-group-row">
+                        <label for="personelSoyad">Soyadı:</label>
+                        <input type="text" id="personelSoyad" placeholder="Personel soyadı..." required>
+                    </div>
+                    <div class="input-group-row">
+                        <label for="personelDepartman">Departman:</label>
+                        <div class="select-wrapper">
+                            <select id="personelDepartman" required>
+                                <option value="" disabled selected>Departman Seçiniz...</option>
+                                <option value="Dep1">Departman-1</option>
+                                <option value="Dep2">Departman-2</option>
+                                <option value="Dep3">Departman-3</option>
+                                <option value="Dep4">Departman-4</option>
+                                <option value="Dep5">Departman-5</option>
+                                <option value="Dep6">Departman-6</option>
+                                <option value="Dep7">Departman-7</option>
+                                <option value="Dep8">Departman-8</option>
+                                <option value="Dep9">Departman-9</option>
+                                <option value="Dep10">Departman-10</option>
+                                <option value="Dep11">Departman-11</option>
+                                <option value="Dep12">Departman-12</option>
+                                <option value="Dep13">Departman-13</option>
+                                <option value="Dep14">Departman-14</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group-row">
+                        <label for="personelUnvan">Unvan:</label>
+                        <div class="select-wrapper">
+                            <select id="personelUnvan" required>
+                                <option value="" disabled selected>Unvan Seçiniz...</option>
+                                <option value="Unvan1">Unvan-1</option>
+                                <option value="Unvan2">Unvan-2</option>
+                                <option value="Unvan3">Unvan-3</option>
+                                <option value="Unvan4">Unvan-4</option>
+                                <option value="Unvan5">Unvan-5</option>
+                                <option value="Unvan6">Unvan-6</option>
+                                <option value="Unvan7">Unvan-7</option>
+                                <option value="Unvan8">Unvan-8</option>
+                                <option value="Unvan9">Unvan-9</option>
+                                <option value="Unvan10">Unvan-10</option>
+                                <option value="Unvan11">Unvan-11</option>
+                                <option value="Unvan12">Unvan-12</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="egitimBilgiGiriş">
+                <h3 class="section-title">Eğitim Detayları</h3>
+
+                <div class="input-group-row">
+                    <label for="egitmen">Eğitmen:</label>
+                    <input type="text" id="egitmen" placeholder="Eğitmen adını giriniz..." required>
+                </div>
+
+                <div id="egitimTarih" class="egitim-tarih" style="position: relative;">
+                    <label for="egitimTar">Eğitim Tarihi:</label>
+                    <input type="text" id="egitimTar" placeholder="GG.AA.YYYY" readonly required>
+
+                    <div id="customCalendarPicker" class="custom-calendar-popup" style="display: none;">
+                        <div class="cal-header">
+                            <button type="button" id="calPrevBtn">&lt;</button>
+                            <span id="calMonthYearTitle">Temmuz 2026</span>
+                            <button type="button" id="calNextBtn">&gt;</button>
+                        </div>
+                        <div class="cal-weekdays">
+                            <span>Pt</span><span>Sa</span><span>Ça</span><span>Pe</span><span>Cu</span><span>Ct</span><span>Pz</span>
+                        </div>
+                        <div id="calDaysGrid" class="cal-days-grid"></div>
+                    </div>
+                </div>
+
+                <div class="input-group-row">
+                    <label for="egitimTuru">Eğitim Türü:</label>
+                    <input type="text" id="egitimTuru" placeholder="Eğitim türünü giriniz..." required>
+                </div>
+
+                <div id="seviyeKonteyner" class="seviye-container">
+                    <span class="seviye-baslik">Eğitim Seviyeleri:</span>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="levelBaslangic" value="Balangic">
+                            <span class="custom-checkbox"></span> Baslangic
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="levelOrta" value="Orta">
+                            <span class="custom-checkbox"></span> Orta
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="levelIleri" value="ileri">
+                            <span class="custom-checkbox"></span> Ileri
+                        </label>
+                        <label class="details" id="ileriInputKonteyner" style="display: none;">
+                            <input type="text" id="levelIleriIn" placeholder="Shop / Hat">
+                        </label>
+                    </div>
+                </div>
+
+                <div id="egitimCommentKonteyner" class="egitim-comment">
+                    <textarea id="egitimComment" placeholder="Not veya yorumlarınızı buraya yazabilirsiniz..." rows="3"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="islemBarı">
+            <button type="button" id="btnUpdate" class="btn-action btn-save"> Güncelle </button>
+
+            <button type="button" id="btnSyncExcel" class="btn-action btn-sync">Excel'i Senkronize Et</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/edit.js"></script>
+</body>
+</html>

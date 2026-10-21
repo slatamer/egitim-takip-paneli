@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ETP - Rapor ve Analizler</title>
+    <link rel="stylesheet" href="css/style_employee-report.css">
+    <script src="js/chart.js"></script>
+    <script src="js/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="report-container">
+
+    <div class="top-header-right">
+        <div class="güncelTarih">
+            <div class="tarih-wrapper">
+                <span id="liveClock">Yükleniyor...</span>
+            </div>
+        </div>
+        <div class="header-buttons">
+            <button type="button" id="btnBack">Geri Dön</button>
+        </div>
+    </div>
+
+    <!-- FİLTRELEME ALANI (Olay Tabanlı Dinamik Tetikleme) -->
+    <div class="filter-section">
+        <div class="filter-group">
+            <label for="filterYear">Yıl:</label>
+            <select id="filterYear"><option value="ALL">Tümü</option></select>
+        </div>
+        <div class="filter-group">
+            <label for="filterDept">Departman:</label>
+            <select id="filterDept"><option value="ALL">Tümü</option></select>
+        </div>
+        <div class="filter-group">
+            <label for="filterType">Eğitim Türü:</label>
+            <select id="filterType"><option value="ALL">Tümü</option></select>
+        </div>
+        <div class="filter-actions">
+            <button id="btnResetFilter" class="btn-action">Sıfırla</button>
+        </div>
+    </div>
+
+    <div class="raporSonucu">
+
+        <!-- SABİT TMMT GENEL GRAFİKLERİ -->
+        <h3 class="sub-section-title">TMMT - Genel Durum Analizi</h3>
+        <div class="chart-row">
+            <div class="chart-card flex-2">
+                <h4>TMMT - Yıllık Eğitim Takip</h4>
+                <div class="canvas-wrapper"><canvas id="chartYearly"></canvas></div>
+            </div>
+            <div class="chart-card flex-1">
+                <h4>TMMT - Ana Eğitim Seviye Dağılımı</h4>
+                <div class="canvas-wrapper"><canvas id="chartAnaEgitimLevels"></canvas></div>
+            </div>
+        </div>
+        <div class="chart-row">
+            <div class="chart-card flex-1">
+                <h4>TMMT - Departmanlara Göre Seviye Kırılımı - Ana Eğitim</h4>
+                <div class="canvas-wrapper"><canvas id="chartDepts"></canvas></div>
+            </div>
+        </div>
+
+        <!-- DEFAULT: SHOP SEVİYE GRAFİKLERİ -->
+        <div id="shopChartsContainer">
+            <h3 class="sub-section-title">TMMT - Departman Seviye Grafikleri</h3>
+            <div class="chart-row multi-charts">
+                <div class="chart-card small-chart"><h5>Departman-1</h5><div class="canvas-wrapper"><canvas id="chartDep1"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-2</h5><div class="canvas-wrapper"><canvas id="chartDep2"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-3</h5><div class="canvas-wrapper"><canvas id="chartDep3"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-4</h5><div class="canvas-wrapper"><canvas id="chartDep4"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-5</h5><div class="canvas-wrapper"><canvas id="chartDep5"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-6</h5><div class="canvas-wrapper"><canvas id="chartDep6"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-7</h5><div class="canvas-wrapper"><canvas id="chartDep7"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-8</h5><div class="canvas-wrapper"><canvas id="chartDep8"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-9</h5><div class="canvas-wrapper"><canvas id="chartDep9"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-10</h5><div class="canvas-wrapper"><canvas id="chartDep10"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-11</h5><div class="canvas-wrapper"><canvas id="chartDep11"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-12</h5><div class="canvas-wrapper"><canvas id="chartDep12"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-13</h5><div class="canvas-wrapper"><canvas id="chartDep13"></canvas></div></div>
+                <div class="chart-card small-chart"><h5>Departman-14</h5><div class="canvas-wrapper"><canvas id="chartDep14"></canvas></div></div>
+            </div>
+        </div>
+
+        <!-- DİNAMİK: FİLTRE SONUÇLARI GRAFİKLERİ -->
+        <div id="filteredResultsContainer" style="display: none; margin-top: 30px; border-top: 2px solid #cbd5e0; padding-top: 20px;">
+            <h3 class="sub-section-title" id="filteredTitle">Filtre Sonuçları</h3>
+
+            <div class="chart-row">
+                <div class="chart-card flex-1">
+                    <h5>Eğitim Türü Dağılımı</h5>
+                    <div class="canvas-wrapper"><canvas id="chartFilterType"></canvas></div>
+                </div>
+                <div class="chart-card flex-1">
+                    <h5>Ana Eğitim Seviye Dağılımı</h5>
+                    <div class="canvas-wrapper"><canvas id="chartFilterLevel"></canvas></div>
+                </div>
+                <div class="chart-card flex-1">
+                    <h5>Unvan Dağılımı</h5>
+                    <div class="canvas-wrapper"><canvas id="chartFilterTitle"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/employee-report.js"></script>
+</body>
+</html>

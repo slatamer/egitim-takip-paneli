@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva;
+}
+
+body {
+    background: #e9ecef;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+button {
+    color: #2d3748;
+    background-color: #cbd5e0;
+}
+
+.training-container {
+    width: 85%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.top-header-right {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.güncelTarih {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    color: #1f4068;
+    padding: 0 4px 4px 0;
+}
+
+.tarih-wrapper {
+    align-items: center;
+    gap: 8px;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+}
+
+#btnBack {
+    font-size: 12px;
+    color: #1f4068;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+#btnBack:hover {
+    background: #f8fafc;
+    border-color: #1f4068;
+}
+
+.training-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.eğitimiAlanBilgileri,
+.egitimBilgiGiriş {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f4068;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.input-group-row,
+.egitim-tarih {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.input-group-row label,
+.egitim-tarih label {
+    width: 130px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    text-align: left;
+}
+
+input[type="text"],
+select,
+.egitim-comment textarea {
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #f8fafc;
+    color: #2d3748;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    height: 38px;
+    line-height: normal;
+    padding: 8px 12px;
+}
+
+#egitimTar {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%231f4068%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M3.5%200a.5.5%200%200%201%20.5.5V1h8V.5a.5.5%200%200%201%201%200V1h1a2%202%200%200%201%202%202v11a2%202%200%200%201-2%202H1a2%202%200%200%201-2-2V3a2%202%200%200%201%202-2h1V.5a.5.5%200%200%201%20.5-.5zM1%204v10a1%201%200%200%200%201%201h14a1%201%200%200%200%201-1V4H1z%22%2F%3E%3C%2Fsvg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 16px auto !important;
+    cursor: pointer !important;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 38px;
+    line-height: normal;
+    padding: 8px 30px 8px 12px;
+    cursor: pointer;
+    vertical-align: middle;
+
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%231f4068%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 9px auto;
+}
+
+.input-group-row .select-wrapper,
+#personelDepartman,
+#personelUnvan,
+#egitimTuru,
+#personelSicilNo,
+#personelAd,
+#personelSoyad,
+#egitimTar,
+#egitmen {
+    width: 230px;
+}
+
+.input-group-row input:focus,
+.input-group-row select:focus,
+.egitim-tarih input:focus,
+.egitim-comment textarea:focus {
+    border-color: #1f4068;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(31, 64, 104, 0.1);
+}
+
+.egitim-comment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.egitim-comment label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.egitim-comment textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 12px;
+    resize: vertical;
+}
+
+.seviye-container {
+    display: none;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.seviye-baslik {
+    width: 130px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    user-select: none;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border: 2px solid #cbd5e0;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-label:hover input ~ .custom-checkbox {
+    border-color: #1f4068;
+}
+
+.checkbox-label input:checked ~ .custom-checkbox {
+    background-color: #1f4068;
+    border-color: #1f4068;
+}
+
+.checkbox-label input:checked ~ .custom-checkbox:after {
+    display: block;
+}
+
+.checkbox-label .custom-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.islemBarı {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    min-width: 110px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-save, .btn-sync {
+    color: #2d3748;
+    background-color: #cbd5e0;
+}
+
+.btn-save:hover, .btn-sync:hover {
+    background-color: #aeb5bf;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content h4 {
+    margin: 0;
+    color: #1f4068;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-modal-save {
+    background: #1f4068;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- ÖZEL AÇILIR TAKVİM STİLLERİ (JavaFX WebView Uyumlu) --- */
+.custom-calendar-popup {
+    position: absolute;
+    top: 45px;
+    left: 145px;
+    width: 250px;
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 9999;
+    padding: 10px;
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1f4068;
+}
+
+.cal-header button {
+    background: #cbd5e0;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cal-header button:hover {
+    background: #1f4068;
+    color: #ffffff;
+}
+
+.cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #718096;
+    margin-bottom: 5px;
+}
+
+.cal-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.cal-day-cell {
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #2d3748;
+}
+
+.cal-day-cell:hover {
+    background: #e2e8f0;
+}
+
+.cal-day-cell.selected {
+    background: #1f4068 !important;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.cal-day-cell.empty {
+    cursor: default;
+    background: transparent !important;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ETP - Kayıt Listesi</title>
+    <link rel="stylesheet" href="css/style_record.css">
+    <style>
+        /* Info İkonu ve Tooltip Stilleri */
+        .info-wrapper {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-left: 5px;
+        }
+        .info-icon {
+            width: 18px;
+            height: 18px;
+            background-color: #718096;
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .info-icon:hover {
+            background-color: #2b6cb0;
+        }
+        .info-tooltip {
+            visibility: hidden;
+            width: 240px;
+            background-color: #2d3748;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px 10px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 1.4;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .info-tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2d3748 transparent transparent transparent;
+        }
+        .info-wrapper:hover .info-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .action-buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="record-container">
+
+    <div class="top-header-right">
+        <div class="güncelTarih">
+            <div class="tarih-wrapper">
+                <span id="liveClock">Yükleniyor...</span>
+            </div>
+        </div>
+
+        <div class="header-buttons">
+            <button type="button" id="btnBack">Geri Dön</button>
+            <button type="button" id="btnReport" class="btn-action"> Genel Rapor </button>
+        </div>
+    </div>
+
+
+    <div class="search-card">
+
+        <div class="search-action-row">
+
+            <div class="search-bar-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Arama yapınız... (Sicil No, Ad, Eğitim vb.)">
+            </div>
+
+            <div class="action-buttons-container">
+                <!-- Excel'den Yükle Butonu ve Info Alanı -->
+                <div style="display: inline-flex; align-items: center;">
+                    <button type="button" id="btnImportExcel" class="btn-action">Veritabanını Senkronize Et</button>
+                    <div class="info-wrapper">
+                        <span class="info-icon">i</span>
+                        <div class="info-tooltip"><b>Excel'den Yükle:</b> Egitim_Kayit_Listesi.xlsx dosyasında yaptığınız manuel ekleme veya değişiklikleri veritabanına aktarmak için kullanılır.</div>
+                    </div>
+                </div>
+
+                <button type="button" id="btnEdit" class="btn-action"> Düzenle </button>
+
+                <button type="button" id="btnDelete" class="btn-action"> Sil </button>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <table class="results-table">
+                <thead>
+                <tr>
+                    <th class="select-column d-none">Seç</th>
+                    <th>Sicil No</th>
+                    <th>Adı Soyadı</th>
+                    <th>Departman</th>
+                    <th>Eğitim Türü</th>
+                    <th>Shop / Hat</th>
+                    <th>Tarih</th>
+                </tr>
+                </thead>
+                <tbody id="resultsBody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/record.js"></script>
+</body>
+</html>

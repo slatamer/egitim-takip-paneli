@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva;
+}
+
+body {
+    background: #e9ecef;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.record-container {
+    width: 85%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.top-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+}
+
+.güncelTarih {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    color: #1f4068;
+    padding: 0 10px;
+}
+
+.tarih-wrapper {
+    align-items: center;
+    gap: 8px;
+}
+
+.search-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Gölgelendirme form sayfasına uyarlandı */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-height: 500px;
+}
+
+.search-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-bar-container {
+    flex-grow: 1;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e0;
+    border-radius: 24px;
+    padding: 2px 15px;
+    transition: all 0.3s ease;
+}
+
+.search-bar-container:focus-within {
+    border-color: #1f4068;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(31, 64, 104, 0.1);
+}
+
+.search-icon {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #1f4068; /* İkon rengi lacivert yapıldı */
+}
+
+#searchInput {
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+.action-buttons-container {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    min-width: 110px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: #2d3748;
+    background-color: #cbd5e0;
+}
+
+.btn-action:hover {
+    background-color: #aeb5bf;
+}
+
+.results-container {
+    flex-grow: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.results-table th, .results-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.results-table th {
+    background-color: #f8fafc;
+    position: sticky;
+    top: 0;
+    font-weight: 700;
+    color: #1f4068;
+}
+
+.results-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* --- SEÇİM KUTUCUĞU STİLLERİ --- */
+.d-none {
+    display: none !important;
+}
+
+.select-column {
+    width: 50px;
+    text-align: center;
+}
+
+.record-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #1f4068;
+}
+
+/* --- ÖZEL MODAL (ALERT/CONFIRM) STİLLERİ --- */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content h4 {
+    margin: 0;
+    color: #1f4068;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.btn-modal-save, .btn-modal-cancel {
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-modal-save {
+    background: #1f4068;
+    color: white;
+}
+
+.btn-modal-cancel {
+    background: #cbd5e0;
+    color: #2d3748;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+#btnBack, #btnRegistrationList, #btnReport {
+    font-size: 12px;
+    color: #1f4068;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+#btnBack{
+    position : relative;
+    right: 523%;
+}
+#btnRegistrationList:hover, #btnReport:hover, #btnBack:hover {
+    background: #f8fafc;
+    border-color: #1f4068;
+}
